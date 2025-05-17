@@ -1,4 +1,4 @@
-# GXTRO-exe
+# GXTRO.PIYEN.DOWNLOADER
 # 說明：
    - 支援 YouTube、Bilibili、Twitter、Facebook、Instagram、Vimeo、Twitch、TikTok 等多平台影片下載
    - 支援部分平台直播下載
