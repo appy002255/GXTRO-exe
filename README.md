@@ -1,4 +1,4 @@
-# GXTRO 媒體下載工具使用說明
+# GXTRO piyen
 
 ## 基本功能
 
