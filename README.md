@@ -1,4 +1,4 @@
-# GXTRO 媒體下載工具
+# GXTRO 下載工具
 
 ## 專案簡介
 
@@ -25,57 +25,7 @@ GXTRO 媒體下載工具是一個基於 `yt-dlp`、`PyQt5` 和 `VLC` 的圖形�
 *   支援 AI 字幕自動生成（Whisper 模型）
 *   支援多檔案合併、批次處理
 
-## 安裝與執行
 
-### 免安裝版（推薦給一般使用者）
-
-1. 前往 [GitHub Releases](https://github.com/appy002255/GXTRO-exe/releases) 下載最新版壓縮包。
-2. 解壓縮後，直接執行 `GXTRO.PIYEN.DOWNLOADER.exe`。
-3. 無需安裝 Python 或其他依賴。
-
-### 開發者/原始碼用戶
-
-若你需要自行修改程式或在原始碼環境下執行，請依下列步驟：
-
-1.  **複製專案**
-
-    ```bash
-    git clone https://github.com/appy002255/GXTRO
-    cd GXTRO
-    ```
-
-2.  **安裝 Python**
-
-    確保您已經安裝了 Python 3.6 或更新版本 (建議使用 64 位元版本以配合 VLC)。您可以從 [Python 官網](https://www.python.org/downloads/) 下載。
-
-3.  **建立虛擬環境 (建議)**
-
-    ```bash
-    python -m venv venv
-    # Windows
-    venv\Scripts\activate
-    # macOS/Linux
-    source venv/bin/activate
-    ```
-
-4.  **安裝依賴**
-
-    ```bash
-    pip install -r requirements.txt
-    pip install python-vlc
-    # 若需 AI 字幕功能，請額外安裝：
-    pip install openai-whisper PyGithub
-    ```
-    *(注意: `python-vlc` 需要額外安裝 VLC 播放器)*
-
-5.  **安裝 VLC 播放器/ffmpeg/yt-dlp**
-    參考下方說明，將必要檔案放置於專案根目錄。
-
-6.  **執行程式**
-
-    ```bash
-    python ytdlp_gui.py
-    ```
 
 ## 更新日誌
 
@@ -179,47 +129,6 @@ GXTRO 媒體下載工具是一個基於 `yt-dlp`、`PyQt5` 和 `VLC` 的圖形�
     **修復**
     - 其他細節優化與錯誤修正
 
-## 打包成可執行檔 (.exe)
-
-您可以使用 PyInstaller 將程式打包成 Windows 可執行檔。為了包含 VLC 和 FFmpeg 等外部依賴，建議使用「一個目錄」模式。
-
-1.  **安裝 PyInstaller**
-
-    ```bash
-    pip install pyinstaller
-    ```
-
-2.  **使用 `build.sh` (推薦在支援 bash 的環境，如 Git Bash, WSL)**
-
-    直接執行專案根目錄下的 `build.sh` 腳本。
-
-    ```bash
-    ./build.sh
-    ```
-    腳本會自動處理 PyInstaller 打包及檔案複製。
-
-3.  **使用 auto-py-to-exe (圖形化介面)**
-
-    *   如果尚未安裝：`pip install auto-py-to-exe`
-    *   執行：`auto-py-to-exe` 開啟圖形化介面。
-    *   **基本設定**：
-        *   腳本位置：選擇 `ytdlp_gui.py`
-        *   打包模式：選擇「一個目錄」(One Directory)
-        *   控制台：選擇「基於控制台」(Console Based)
-    *   **附加檔案 (--add-data)**：
-        *   新增資料夾：`VLCPortable` -> `VLCPortable`
-        *   新增資料夾：`ffmpeg` -> `ffmpeg`
-        *   新增檔案：`yt-dlp.exe` -> `.`
-        *   新增檔案：`vlc.exe` -> `.`
-    *   **隱藏導入 (--hidden-import)**：
-        *   添加 `vlc`
-        *   添加 `python-vlc`
-        *   添加所有 `PyQt5` 相關模組 (如 `PyQt5.QtCore`, `PyQt5.QtGui`, `PyQt5.QtWidgets`)
-        *   添加 `requests`
-        *   添加 `psutil`
-    *   點擊「生成 .EXE」。
-
-打包完成後，在 `dist` 資料夾下會生成一個包含 EXE 檔案和所有必要資料夾的子資料夾 (例如 `dist/GXTRO_v1.05`)。您需要將整個子資料夾複製到其他地方執行。
 
 ## 免責聲明
 
