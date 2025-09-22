@@ -1,0 +1,8 @@
+pip install psutil
+pip install requests
+pip install PyQt5
+pip install pycryptodomex
+pip install PyGithub
+pip install openai-whisper
+pip install python-vlc
+pip install tqdm
